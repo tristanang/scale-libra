@@ -1,18 +1,19 @@
-__device_info_dict = {}
-__lst = ('pdu','switch','server')
+class Device: #create a hashable datatype for networkx nodes
+	def __init__(self,settings='test'):
 
-for device in __lst:
-	__device_info_dict = {}
+		if settings == 'test':
+			self.device_type = 'switch'
+			self.C14 = 2
+			self.ethernet = 48
 
-__ports = ('ethernet_port','power_port')
-
-__device_info_dict['pdu'][] =
-__device_info_dict['pdu'] =
-
-
-class Device:
-	def __init__(self):
+		self.hash = (self.device_type,self.C14,self.ethernet)
 
 	def __eq__(self,other):
+		
+		return all(map(lambda x,y : x == y, self.hash,other.hash))
 
 	def __hash__(self):
+		return hash(self.hash)
+
+	def _rehash(self):
+		self.hash = (self.device_type,self.C14,self.ethernet)
