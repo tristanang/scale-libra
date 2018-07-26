@@ -8,5 +8,6 @@ class Graph(nx.Graph):
 	def add_node(self,settings):
 		_add_node(device.Device(settings))
 
-	#def add_edge(self,first,second,connection): #connection is a type string
+	def add_edge(self,first,second,connection=None): #connection is a type string
+		(add something now look at documentation)
 		#if not connection in #string database:
