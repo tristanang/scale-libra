@@ -7,5 +7,5 @@ setup(name='scale-libra',
       description='Infrastructure as Code for Lightbound',
       author='Tristan Ang',
       author_email='theng@scalecomputing.com',
-      packages=['scale-libra',],
+      packages=['scale_libra','scale_libra.graph','scale_libra.device','scale_libra.graph.device',],
      )
