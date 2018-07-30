@@ -9,5 +9,10 @@ class Graph(nx.Graph):
 		_add_node(device.Device(settings))
 
 	def add_edge(self,first,second,connection=None): #connection is a type string
-		(add something now look at documentation)
+		if connection:
+			assert type(connection) == type('string')
+			assert first.hasAvailableConnection(connection)
+			assert second.hasAvailableConnection(connection)
+
 		#if not connection in #string database:
+		_add_edge(first,second,connection=connection)

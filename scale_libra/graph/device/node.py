@@ -21,7 +21,7 @@ class Device: #create a hashable datatype for networkx nodes
 			self.location,self.ports_dimensions)
 
 	def __eq__(self,other):
-		if len(self.hash) != len(other.has):
+		if len(self.hash) != len(other.hash):
 			return False
 
 		return all(map(lambda x,y : x == y, self.hash,other.hash))
@@ -32,6 +32,8 @@ class Device: #create a hashable datatype for networkx nodes
 	def _rehash(self):
 		self.hash = (self.name,self.device_type,
 			self.location,self.ports_dimensions)
+
+	def hasAvailableConnection(self,connection):
 
 class Server(Device):
 	def __init__(self,settings):

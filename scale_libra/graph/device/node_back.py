@@ -13,7 +13,7 @@ class Device: #create a hashable datatype for networkx nodes
 		self.hash = (self.device_type,self.C14,self.ethernet)
 
 	def __eq__(self,other):
-		
+
 		return all(map(lambda x,y : x == y, self.hash,other.hash))
 
 	def __hash__(self):
