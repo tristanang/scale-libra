@@ -12,6 +12,10 @@ class Port:
 		self.gender = gender
 		self.speed = speed
 
+	def __eq__(self,other):
+		value = (self.type,self.gender,self.speed)
+		return value == other
+
 	def __repr__(self):
 		return "Port(%s,%s,%d)" % (self.type,self.gender,self.speed)
 
@@ -25,6 +29,7 @@ class Board:
 
 		if ports:
 			self.port_type = np.zeros(dimensions,dtype=Port)
+			self.port_type = np.full_like(self.port_type,ports) #as a test case, all ports set to the same type in this iteration
 			print("ports triggered")
 
 	def quickAdd(self):
@@ -40,3 +45,6 @@ class Board:
 
 	def getDimensions(self):
 		return self.availability.shape
+
+	def availableConnections(self,connection):
+		return np.argwhere(self.port_type == connection)

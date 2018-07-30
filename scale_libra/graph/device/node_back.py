@@ -2,9 +2,6 @@ class Device: #create a hashable datatype for networkx nodes
 	def __init__(self,settings='test'):
 		self.name = 'placeholder' #need to check for no clashes
 
-
-
-
 		if settings == 'test':
 			self.device_type = 'switch'
 			self.C14 = 2

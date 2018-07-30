@@ -33,7 +33,8 @@ class Device: #create a hashable datatype for networkx nodes
 		self.hash = (self.name,self.device_type,
 			self.location,self.ports_dimensions)
 
-	def hasAvailableConnection(self,connection):
+	def availableConnection(self,connection):
+		self.board.availableConnection(connection)
 
 class Server(Device):
 	def __init__(self,settings):
