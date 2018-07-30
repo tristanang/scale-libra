@@ -12,7 +12,7 @@ class Port:
 		self.gender = gender
 		self.speed = speed
 
-	def __eq__(self,other):
+	def __eq__(self,other): #error probably here
 		value = (self.type,self.gender,self.speed)
 		return value == other
 

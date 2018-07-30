@@ -1,4 +1,4 @@
-import device
+import scale_libra.graph.device.node as node
 import networkx as nx
 
 class Graph(nx.Graph):
@@ -6,14 +6,16 @@ class Graph(nx.Graph):
 	_add_edge = nx.Graph.add_edge
 
 	def add_node(self,settings):
-		_add_node(device.Device(settings))
+		_add_node(node.Device(settings))
 
 	def add_edge(self,first,second,connection): #connection is a type string
 
-		assert type(connection) == type('string')
+		#assert type(connection) == type('string') #not string but port type
 
 		first_ports = first.availableConnections(connection)
 		second_ports = second.availableConnections(connection)
+
+		print(first_ports)
 
 		assert first_ports and second_ports
 		#need to add exception
