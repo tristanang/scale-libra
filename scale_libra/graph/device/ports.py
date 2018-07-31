@@ -30,7 +30,7 @@ class Board:
 		if ports:
 			self.port_type = np.zeros(dimensions,dtype=Port)
 			self.port_type = np.full_like(self.port_type,ports) #as a test case, all ports set to the same type in this iteration
-			print("ports triggered")
+			#print("ports triggered")
 
 	def quickAdd(self):
 		dim = self.availability.shape

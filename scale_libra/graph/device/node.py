@@ -34,7 +34,10 @@ class Device: #create a hashable datatype for networkx nodes
 			self.location,self.ports_dimensions)
 
 	def availableConnections(self,connection):
-		self.board.availableConnections(connection)
+		return self.board.availableConnections(connection)
+
+	def __repr__(self):
+		return self.name
 
 class Server(Device):
 	def __init__(self,settings):
