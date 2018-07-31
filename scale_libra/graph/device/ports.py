@@ -8,6 +8,9 @@ test = {}
 
 class Port:
 	def __init__(self,type,gender,speed = None):
+		if speed:
+			assert type(speed) == int
+
 		self.type = type
 		self.gender = gender
 		self.speed = speed
@@ -48,3 +51,12 @@ class Board:
 
 	def availableConnections(self,connection):
 		return np.argwhere(self.port_type == connection)
+		# your 1s and 0s
+
+	def usePort(self,index):
+		assert self.availability[index] == 0, "Port is not unused."
+		self.availability[index] += 1
+
+	def removePort(self,index):
+		assert self.availability[index] == 1, "Port is not used."
+		self.availability[index] -= 1
