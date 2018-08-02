@@ -24,8 +24,8 @@ class Graph(nx.Graph):
 		#assert first.board.availability[0]
 		#assert second.board.availability[0]
 
-		first.board.availability[first_index] += 1# create a method safetly change things
-		second.board.availability[second_index] += 1#
-
+		first.board.usePort(first_index)
+		second.board.usePort(second_index)
+		
 		self._add_edge(first,second,connection=connection)
 		#if not connection in #string database:
