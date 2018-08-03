@@ -1,25 +1,34 @@
-import test_server
-import scale_libra.graph.device.node as node
-import scale_libra.graph.logic as logic
+import unittest
+import logging
 
-import numpy as np
+class NodeTestcase(unittest.TestCase):
+    def blank:
+        return
 
-test = node.Device(test_server.setName('test'))
-test2 = node.Device(test_server.setName('test2'))
+if __name__ == '__main__':
 
-#print(np.argwhere(test.board.port_type == test_server.test_port))
+    import test_server
+    import scale_libra.graph.device.node as node
+    import scale_libra.graph.logic as logic
 
-print(test.board.availability)
+    import numpy as np
 
-bye = test.board.availableConnections(test_server.test_port)
-test.board.usePort((0,0))
-hi = test.board.availableConnections(test_server.test_port)
+    test = node.Device(test_server.setName('test'))
+    test2 = node.Device(test_server.setName('test2'))
 
-g = logic.Graph()
-#print(test.board.availability)
-g.add_edge(test,test2,test_server.test_port)
-#print(test.board.availability)
+    #print(np.argwhere(test.board.port_type == test_server.test_port))
 
-#print(g.edges(data=True))
+    print(test.board.availability)
 
-print('passed')
+    bye = test.board.availableConnections(test_server.test_port)
+    test.board.usePort((0,0))
+    hi = test.board.availableConnections(test_server.test_port)
+
+    g = logic.Graph()
+    #print(test.board.availability)
+    g.add_edge(test,test2,test_server.test_port)
+    #print(test.board.availability)
+
+    #print(g.edges(data=True))
+
+    print('passed')
