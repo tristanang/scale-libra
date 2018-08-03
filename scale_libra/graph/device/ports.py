@@ -1,6 +1,5 @@
 import numpy as np
 
-test = {}
 #2d matrix
 #1s and zeros
 #1) Port Availability
@@ -24,7 +23,7 @@ class Port:
 
 class Board:
     def __init__(self,dimensions,ports = None): #dimensions is len 2 tuple rows,columns
-        assert len(dimensions) == 2
+        assert len(dimensions) == 2, "Dimensions incorrect"
         self.availability = np.zeros(dimensions,dtype=int)
         self.port_type = np.zeros(dimensions,dtype=bool)
 
@@ -33,7 +32,7 @@ class Board:
             self.port_type = np.full_like(self.port_type,ports) #as a test case, all ports set to the same type in this iteration
             #print("ports triggered")
 
-    def quickAdd(self):
+    def quickAdd(self): #not used or good
         dim = self.availability.shape
         rows = dim[0]
         columns = dim[1]
